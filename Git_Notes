@@ -1,0 +1,120 @@
+Configuring name and email in Git:
+
+            git config --global user.name "Your_name"
+            git config --global user.email "Your_name@heaptrace.com"
+
+
+            Remember git and github are completely different tools to use:
+
+            Git and GitHub are often used together, but they serve different purposes. Here’s an analogy and a short explanation of each:
+
+            Analogy:
+
+                Git is like a library of books (your local collection of versions).
+
+                GitHub is like a public library where people can share, collaborate, and check out books (a cloud-based service for sharing and collaborating on Git repositories).
+
+            Git:
+
+                What it is: Git is a version control system. It's a tool you use on your local computer to track changes in your code or files, allowing you to collaborate, revert to previous versions, and manage different versions of your project.
+
+                Purpose: It helps you track changes, manage versions, and collaborate on code locally.
+
+                Usage: You can use Git commands like git init, git add, git commit, and git push to manage versions and commit changes in your local repository.
+
+                Example: Imagine you’re writing a book and want to keep track of each version of your chapters as you edit them. Git helps you organize all those versions on your computer.
+
+            GitHub:
+
+                What it is: GitHub is a platform that hosts your Git repositories online. It's a cloud-based service that provides a central place for storing, sharing, and collaborating on Git repositories with others.
+
+                Purpose: GitHub makes it easy to share your code with others, collaborate on projects, and store your Git repositories in a remote location.
+
+                Usage: You can push your local Git changes to GitHub, share your project with others, and collaborate on the same project.
+
+                Example: Once your book is written, you want to share it with others so they can read, edit, or suggest changes. GitHub is like a public library where you can upload and share your work with the world.
+
+            Key Differences:
+
+                Git: A tool you use to track cdchanges to your code locally on your computer.
+
+                GitHub: A cloud service that hosts and shares Git repositories, enabling collaboration with others.
+
+Repositories:
+
+                Containers on git
+
+                1.
+                git init    (To initailize a Repository)
+
+                2.
+                git status  (To check the status of your Repo)
+
+                3. This ensures a checkpoint ie. a commit:
+                    3.a:
+                        First we add that changes in a staging area by using
+
+                            git add file_name
+                                   or
+                            git add .
+
+                    3.b:
+                        Now we can commit the changes by using
+                            Here m stands for message flag
+
+                            git commit -m "Commit Message"
+
+                    3.c:
+                        To check the history of commit use:
+
+                            git log
+
+                            The output of this is:
+
+                            siddhant_udgirkar@siddhant-udgirkar:~/Revision/Python/Concepts/27_March_2025/Git_Trial$ git log
+                            commit 7f6ef20a69e7d08a57073d733cee80af0a532465 (HEAD -> master)
+                            Author: Sid <siddhantu@heaptrace.com>
+                            Date:   Thu Mar 27 17:38:28 2025 +0530
+
+                                All the files commited
+
+                            commit cdfb6b5dbf630231d073816fcce6d1075898035d
+                            Author: Sid <siddhantu@heaptrace.com>
+                            Date:   Thu Mar 27 17:37:46 2025 +0530
+
+                                Changes in index.html file
+
+
+                    3.d:
+                        The reason for git commit and git log is that we can go back to a certain commit if in case the changes that we made are not relavant
+
+                        Hence to do so we have:
+
+                            git checkout <commit hash>
+
+                                Here commit hash are the numbers that are randomly generated
+
+                            This takes us back in the time like a time machine but to avoid losses of our files we have something called as git branches
+
+
+                4.
+                Branches:
+                    4.1) It is a timeline of an application of a repo
+                    4.2) This is used to do some experimental things that are not permanent
+                    4.3) The main statndard and is by default branch that we work on is called as Main Branch
+                    4.4) git branch
+                            This command is not going to create a new branch rather give the current branct that we are working on.
+
+                    4.5) Hence to get bcak on the master branch use:
+                            git checkout master
+                                and you'll be back to the original last commits before going out to other checkpoint
+
+                    4.6) To create a new git branch:
+                            use git branch <branch_name>
+                                if name not given it will just give the current branch name
+
+                5) To merge two different branches use:
+                        first get into master branch
+                            git merge <branch_name_to_be_merged>
+
+git config --list
